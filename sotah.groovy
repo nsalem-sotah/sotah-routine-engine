@@ -53,9 +53,9 @@ definition(
 	singleInstance: true,
 	parent: parent ? "sotah.SOTAH" : null,
 	category: "Convenience",
-	iconUrl: "https://cdn.rawgit.com/ady624/CoRE/master/resources/images/app-CoRE.png",
-	iconX2Url: "https://cdn.rawgit.com/ady624/CoRE/master/resources/images/app-CoRE@2x.png",
-	iconX3Url: "https://cdn.rawgit.com/ady624/CoRE/master/resources/images/app-CoRE@2x.png"
+	iconUrl: "https://cdn.rawgit.com/nsalem-sotah/sotah-routine-engine/master/resources/images/S%20logo%20(60x60).png",
+	iconX2Url: "https://cdn.rawgit.com/nsalem-sotah/sotah-routine-engine/master/resources/images/S%20logo%20(125x125).png",
+	iconX3Url: "https://cdn.rawgit.com/nsalem-sotah/sotah-routine-engine/master/resources/images/S%20logo%20(125x125).png"
 )
 
 preferences {
@@ -208,23 +208,23 @@ private pageMainSOTAH() {
 	dynamicPage(name: "pageMain", title: "", install: true, uninstall: false) {
 		section() {
 			if (!state.endpoint) {
-				href "pageInitializeDashboard", title: "SOTAH Dashboard", description: "Tap here to initialize the SOTAH dashboard", image: "https://cdn.rawgit.com/ady624/CoRE/master/resources/images/icons/dashboard.png", required: false
+				href "pageInitializeDashboard", title: "SOTAH Dashboard", description: "Tap here to initialize the SOTAH dashboard", image: "https://cdn.rawgit.com/nsalem-sotah/sotah-routine-engine/master/resources/images/icons/dashboard.png", required: false
 			} else {
 				//reinitialize endpoint
 				initializeSOTAHEndpoint()
 				def url = "${state.endpoint}dashboard"
 				debug "Dashboard URL: $url *** DO NOT SHARE THIS LINK WITH ANYONE ***", null, "info"
-				href "", title: "SOTAH Dashboard", style: "external", url: url, image: "https://cdn.rawgit.com/ady624/CoRE/master/resources/images/icons/dashboard.png", required: false
+				href "", title: "SOTAH Dashboard", style: "external", url: url, image: "https://cdn.rawgit.com/nsalem-sotah/sotah-routine-engine/master/resources/images/icons/dashboard.png", required: false
 			}
 		}
 
 		section() {
-			app( name: "pistons", title: "Add a SOTAH routine...", appName: "SOTAH", namespace: "SOTAH", multiple: true, uninstall: false, image: "https://cdn.rawgit.com/ady624/CoRE/master/resources/images/icons/piston.png")
+			app( name: "pistons", title: "Add a SOTAH routine...", appName: "SOTAH", namespace: "SOTAH", multiple: true, uninstall: false, image: "https://cdn.rawgit.com/nsalem-sotah/sotah-routine-engine/master/resources/images/icons/piston.png")
 		}
 
 		section(title:"Application Info") {
-			href "pageGlobalVariables", title: "Global Variables", image: "https://cdn.rawgit.com/ady624/CoRE/master/resources/images/icons/variables.png", required: false
-			href "pageStatistics", title: "Runtime Statistics", image: "https://cdn.rawgit.com/ady624/CoRE/master/resources/images/icons/statistics.png", required: false
+			href "pageGlobalVariables", title: "Global Variables", image: "https://cdn.rawgit.com/nsalem-sotah/sotah-routine-engine/master/resources/images/icons/variables.png", required: false
+			href "pageStatistics", title: "Runtime Statistics", image: "https://cdn.rawgit.com/nsalem-sotah/sotah-routine-engine/master/resources/images/icons/statistics.png", required: false
 		}
 
 		section(title:"") {
@@ -256,7 +256,7 @@ def pageGeneralSettings(params) {
 		}
 
 		section(title: "Dashboard") {
-			href "pageDashboardTaps", title: "Taps", description: "Edit the list of taps on the dashboard", required: false, image: "https://cdn.rawgit.com/ady624/CoRE/master/resources/images/tap.png"
+			href "pageDashboardTaps", title: "Taps", description: "Edit the list of taps on the dashboard", required: false, image: "https://cdn.rawgit.com/nsalem-sotah/sotah-routine-engine/master/resources/images/tap.png"
 			input "dashboardTheme", "enum", options: ["Classic", "Experimental"], title: "Dashboard theme", defaultValue: "Experimental", required: false
         }
 
